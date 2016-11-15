@@ -1,8 +1,9 @@
-#ifdef DATAPIPELINE_DATAROW_H
+#ifndef DATAPIPELINE_DATAROW_H
 #define DATAPIPELINE_DATAROW_H
 
 #include "datapipeline/Exports.H"
 #include <string>
+
 
 namespace DataPipeline {
 
@@ -13,7 +14,7 @@ private:
 
 	std::string hotelName_; // representing name of hotel 
 
-	std::string address_; // address the hotel column
+	std::string hotelAddress_; // address the hotel column
 
 	std::string contactName_; // person of contact for hotel
 
@@ -25,8 +26,26 @@ private:
 public:
 	// constructor
 	explicit DataRow(
-
+		const int rating,
+		const std::string hotelname,
+		const std::string address,
+		const std::string contactperson,
+		const std::string phone,
+		const std::string url
 		);
+
+	const int getRatings() const;
+
+	const std::string& getHotelName() const;
+
+	const std::string& getAddress() const;
+
+	const std::string& getContact() const;
+
+	const std::string& getPhone() const;
+
+	const std::string& getUrl() const;
+
 
 };
 

@@ -9,9 +9,9 @@ SET(PROJECT_NAME datapipeline)
 # yes we are building shared libraries
 ADD_DEFINITIONS(-DBUILD_SHARED_LIB)
 # we are building the code as shared library accordingly we must set a name
-SET(SHARED_LIB_NAME DataPipeline)
+SET(SHARED_LIB_NAME datapipeline)
 # executale name
-SET(EXECUTABLE_NAME datapipeline)
+SET(EXECUTABLE_NAME run)
 # ###############################################
 # Make VC happy and group all the binary outputs,
 # also make sure GMock headers will compile in
@@ -37,9 +37,25 @@ ENDIF("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang")
 # MESSAGE(FATAL_ERROR " flags " ${CMAKE_CXX_FLAGS})
 SET(ADDITIONAL_COMP_FLAGS "")
 
+
+# include header files to be included for sources to compile
+INCLUDE_DIRECTORIES(BEFORE 
+	${CMAKE_CURRENT_SOURCE_DIR}/include
+	)
+
 # ##################################################
 # create executable target for program
 ADD_EXECUTABLE(${EXECUTABLE_NAME} ${CMAKE_CURRENT_SOURCE_DIR}/main.cpp)
+TARGET_LINK_LIBRARIES(${EXECUTABLE_NAME} ${SHARED_LIB_NAME})
+
+# include the source files to be compiled and generated as shared library
+SET(SOURCE_FILES_CPP
+	${CMAKE_CURRENT_SOURCE_DIR}/src/DataRow.C
+	)
+
+# ###############################################
+# add target to create shared library
+ADD_LIBRARY(${SHARED_LIB_NAME} SHARED ${SOURCE_FILES_CPP})
 
 
 # ###############################################
