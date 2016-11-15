@@ -34,6 +34,11 @@ public:
 		const std::string url
 		);
 
+	// destructor
+	~DataRow(){
+		
+	}
+
 	const int getRatings() const;
 
 	const std::string& getHotelName() const;

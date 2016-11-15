@@ -23,7 +23,7 @@ IF( MSVC )
 	ADD_DEFINITIONS( -D_VARIADIC_MAX=10)
 ENDIF( MSVC )
 
-SET(CMAKE_EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/bin)
+# SET(CMAKE_EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/bin)
 # set c++11 flags for compiler types
 IF ( "${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang")
 	SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -stdlib=libc++")
@@ -51,6 +51,7 @@ TARGET_LINK_LIBRARIES(${EXECUTABLE_NAME} ${SHARED_LIB_NAME})
 # include the source files to be compiled and generated as shared library
 SET(SOURCE_FILES_CPP
 	${CMAKE_CURRENT_SOURCE_DIR}/src/DataRow.C
+	${CMAKE_CURRENT_SOURCE_DIR}/src/Data.C
 	)
 
 # ###############################################
