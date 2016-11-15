@@ -52,6 +52,7 @@ TARGET_LINK_LIBRARIES(${EXECUTABLE_NAME} ${SHARED_LIB_NAME})
 SET(SOURCE_FILES_CPP
 	${CMAKE_CURRENT_SOURCE_DIR}/src/DataRow.C
 	${CMAKE_CURRENT_SOURCE_DIR}/src/Data.C
+	${CMAKE_CURRENT_SOURCE_DIR}/src/CsvDataReader.C
 	)
 
 # ###############################################

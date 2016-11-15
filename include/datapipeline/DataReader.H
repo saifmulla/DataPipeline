@@ -2,14 +2,16 @@
 #define DATAPIPELINE_DATAREADER_H
 
 #include "datapipeline/Exports.H"
+
 #include <vector>
+#include <memory>
+#include <string>
 
 namespace DataPipeline {
 
-class EXPORTS DataReader{
+class Data; //forward delcaration of class Data
 
-private:
-	std::vector<std::string> columnNames;
+class EXPORTS DataReader{
 
 public:
 	// read
@@ -17,15 +19,16 @@ public:
 	// must implement this function. Mainly this function can be used to have 
 	// different implementation of file reading based on type of file 
 	// being read
-	virtual void read(const std::string fileName) = 0;
+	virtual DataPipeline::Data read() = 0;
 
-	virtual unique_ptr<std::string>& getColumnName() = 0;
+	virtual std::vector<std::string>& getColumnNames() = 0;
 
 	virtual ~DataReader(){
+
 	}
 
 };
 
 }//end namespace
 
-#endif /* DataPipeline */
+#endif /* DATAPIPELINE_DATAREADER_H */
