@@ -77,7 +77,7 @@ DataPipeline::Data DataPipeline::CsvDataReader::read()
 
 	inf.close();
 
-	return localdata;
+	return localdata;//TODO: optimise later with a unique_ptr
 }
 
 std::vector<std::string>& 

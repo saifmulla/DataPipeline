@@ -53,6 +53,8 @@ SET(SOURCE_FILES_CPP
 	${CMAKE_CURRENT_SOURCE_DIR}/src/DataRow.C
 	${CMAKE_CURRENT_SOURCE_DIR}/src/Data.C
 	${CMAKE_CURRENT_SOURCE_DIR}/src/CsvDataReader.C
+	${CMAKE_CURRENT_SOURCE_DIR}/src/XmlDataWriter.C
+	${CMAKE_CURRENT_SOURCE_DIR}/src/JsonDataWriter.C
 	)
 
 # ###############################################
