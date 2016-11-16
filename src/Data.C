@@ -32,3 +32,8 @@ DataPipeline::DataRow& DataPipeline::Data::getRow(int index)
 const int DataPipeline::Data::size() const {
 	return this->rows_.size();
 }
+
+const std::vector<DataPipeline::DataRow*>& DataPipeline::Data::getRows() const
+{
+	return this->rows_;
+}

@@ -10,7 +10,7 @@ bool DataPipeline::JsonDataWriter::write(
 	const std::string& fileName
 	)
 {
-
+	
 }
 
 bool DataPipeline::JsonDataWriter::sort(DataPipeline::Data& data, SortType sort)

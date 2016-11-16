@@ -23,6 +23,8 @@ class EXPORTS Data {
 
 		DataPipeline::DataRow& getRow(int index);
 
+		const std::vector<DataPipeline::DataRow*>& getRows() const;
+
 		~Data();
 
 
