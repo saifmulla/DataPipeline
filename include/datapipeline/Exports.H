@@ -1,6 +1,9 @@
 #ifndef DATAPIPELINE_Exports_H
 #define DATAPIPELINE_Exports_H
 
+// Windows dll fix fill
+// this file is primarily made to resolve dll issues while building on windows
+// mainly just prefix EXPORTS pragma with class names
 #ifdef _MSC_VER
     // disable warnings
     #pragma warning(disable:4996)

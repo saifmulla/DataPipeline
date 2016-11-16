@@ -1,6 +1,12 @@
 #ifndef DATAPIPELINE_CSVDATAREADER_H
 #define DATAPIPELINE_CSVDATAREADER_H
 
+///////////////////////////////////////////////////////////////////////////////
+// CsvDataReader
+//
+// this is a implementation of base class DataReader, it provides implementation
+// functionality for reading csv files
+
 #include "datapipeline/DataReader.H"
 #include "datapipeline/Data.H"
 #include "datapipeline/DataRow.H"
@@ -13,16 +19,23 @@ namespace DataPipeline {
 
 class EXPORTS CsvDataReader : public DataReader {
 private:
-	std::vector<std::string> columnNames_;
+	std::vector<std::string> columnNames_; // store names of column headings
 
-	std::string fileName_;
+	std::string fileName_; // name of csv file from which data must be read
+
 public:
-	CsvDataReader(const std::string& fileName);
+	// default and only way of instantiaing the class
+	explicit CsvDataReader(const std::string& fileName);
 
+	// read
+	// implementation of pure virtual function read from base class
+	// in to subclass
 	virtual DataPipeline::Data read() override;
 
+	// return column names
 	virtual std::vector<std::string>& getColumnNames() override;
 
+	//
 	~CsvDataReader(){
 		columnNames_.clear();
 		fileName_ = "";

@@ -27,10 +27,9 @@ TEST(TestGeneral, regex){
 		FAIL();
 
 	std::regex validurl("#((?:https?|http)://(?:\\S*?\\.\\S*?)(?:[\\s)\\[\\]{},;\"\':<]|\\.\\s|$))#");
-	if(std::regex_match("http://saifmullacom",validurl))
-		SUCCEED();
-	else
-		FAIL();	
+	ASSERT_FALSE(std::regex_match("http://saifmullacom",validurl));
+	ASSERT_TRUE(std::regex_match("http://saifmulla.com/index/index.php",validurl));
+	ASSERT_TRUE(std::regex_match("http://saifmulla.com",validurl));
 
 }
 

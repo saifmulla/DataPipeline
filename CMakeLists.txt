@@ -1,3 +1,12 @@
+# ###############################################
+# /////////////DataPipeline\\\\\\\\\\\\\\\\\\\\\\
+# This is the primary cmake file for the complete project
+# therefore to compile this project this file must located 
+# with CMAKE command
+# this project was built using cmake v2.8 therefore any version
+# beyond 2.8 should be able to compile this file
+# ###############################################
+
 CMAKE_MINIMUM_REQUIRED(VERSION 2.8) #minimum cmake version for building project
 
 # project name
@@ -33,9 +42,7 @@ ELSEIF ( "${CMAKE_CXX_COMPILER_ID}" STREQUAL "MSVC")
 	# DO something for msc++
 ENDIF("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang")
 
-# MESSAGE("COMPILER ID " ${CMAKE_CXX_COMPILER_ID} ${CMAKE_CXX_COMPILER})
-# MESSAGE(FATAL_ERROR " flags " ${CMAKE_CXX_FLAGS})
-SET(ADDITIONAL_COMP_FLAGS "")
+SET(ADDITIONAL_COMP_FLAGS "") # for the moment not using this option
 
 
 # include header files to be included for sources to compile
@@ -66,7 +73,6 @@ ADD_LIBRARY(${SHARED_LIB_NAME} SHARED ${SOURCE_FILES_CPP})
 # ###############################################
 # by default unit tests are disabled
 # however to enable them simply supply variable
-# BUILD_UNIT_TESTS = ON
 OPTION( BUILD_UNIT_TESTS "Build unit tests." OFF )
 
 IF (BUILD_UNIT_TESTS)
@@ -91,3 +97,6 @@ IF( BUILD_UNIT_TESTS)
 	ADD_SUBDIRECTORY(tests)
 ENDIF( BUILD_UNIT_TESTS)
 
+# ###############################################
+# end CMakeLists.txt file
+# ###############################################

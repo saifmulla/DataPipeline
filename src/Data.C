@@ -1,10 +1,12 @@
 #include "datapipeline/Data.H"
 
+// constructor
 DataPipeline::Data::Data()
 :rows_(0),size_(0)
 {
 
 }
+
 
 DataPipeline::Data::~Data()
 {

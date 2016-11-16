@@ -1,6 +1,12 @@
 #ifndef DATAPIPELINE_DATAROW_H
 #define DATAPIPELINE_DATAROW_H
 
+///////////////////////////////////////////////////////////////////////////////
+// DataRow
+// This class represents a single Hotel, basically it stores all the information
+// of a hotel stored as row in input file so it can also be tearmed as a single
+// row of data
+
 #include "datapipeline/Exports.H"
 #include <string>
 
@@ -25,6 +31,8 @@ private:
 
 public:
 	// constructor
+	// this is the only mechanism to instanstiate this class with a 
+	// parameterised constructor
 	explicit DataRow(
 		const int rating,
 		const std::string hotelname,
@@ -39,16 +47,23 @@ public:
 		
 	}
 
+	// rating the rating for the row
+	// we are storing rating as int
 	const int getRatings() const;
 
+	// get name of hotel in row
 	const std::string& getHotelName() const;
 
+	// get address
 	const std::string& getAddress() const;
 
+	// get contact name
 	const std::string& getContact() const;
 
+	// get phone number as string
 	const std::string& getPhone() const;
 
+	// get url for hotel
 	const std::string& getUrl() const;
 
 

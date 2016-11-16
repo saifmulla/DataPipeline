@@ -6,9 +6,16 @@ DataPipeline::Validate::Validate(DataPipeline::Data* data)
 
 }
 
-std::string& DataPipeline::Validate::checkUrl(std::string& uri)
+std::string DataPipeline::Validate::checkUrl(std::string& uri)
 {
-
+	// TODO: perform more check for validating abc, 123 and xyx coms
+	std::string blank = "";
+	// perl based regex for url validation
+	std::regex validurl("#((?:https?|http)://(?:\\S*?\\.\\S*?)(?:[\\s)\\[\\]{},;\"\':<]|\\.\\s|$))#");
+	if(regex_match(uri,validurl))
+		return uri;
+	else
+		return std::string(); 
 }
 
 int DataPipeline::Validate::checkRatings(const int& rating)
@@ -28,6 +35,6 @@ void DataPipeline::Validate::checkUTF8(std::string& str)
 
 void DataPipeline::Validate::check()
 {
-
+	
 }
 

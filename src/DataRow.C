@@ -15,7 +15,6 @@ contactName_(contactperson),phone_(phone),Uri_(url)
 }
 
 // accessor functions
-
 const int DataPipeline::DataRow::getRatings() const {
 	return this->rating_;
 }

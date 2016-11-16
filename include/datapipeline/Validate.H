@@ -6,6 +6,8 @@
 #include "datapipeline/DataRow.H"
 #include <memory>
 #include <cmath>
+#include <regex>
+#include <string>
 
 namespace DataPipeline {
 
@@ -19,7 +21,7 @@ public:
 
 	void checkUTF8(std::string& name);
 
-	std::string& checkUrl(std::string& url);
+	std::string checkUrl(std::string& url);
 
 	int checkRatings(const int& rating);
 
