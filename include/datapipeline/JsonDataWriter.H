@@ -2,6 +2,10 @@
 #define DATAPIPELINE_JSONDATAWRITER_H
 
 #include "datapipeline/DataWriter.H"
+#include <fstream>
+#include <vector>
+#include <algorithm>
+#include <sstream>
 
 // this class is a child implementation of base class DataWriter,
 // it implements JSON data output to file for any class Data object supplied

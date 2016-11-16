@@ -12,7 +12,7 @@ bool DataPipeline::XmlDataWriter::write(
 	std::ofstream writer(fileName);
 	const std::vector<DataPipeline::DataRow*>& datarows = data.getRows();
 
-	writer << "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
+	writer << "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\" ?>\n";
 	writer << "<Hotels>\n";
 	std::for_each(
 		datarows.cbegin(),

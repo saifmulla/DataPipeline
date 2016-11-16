@@ -4,6 +4,7 @@
 #include "datapipeline/DataWriter.H"
 #include <fstream>
 #include <vector>
+#include <algorithm>
 
 // this class is a child implementation of base class DataWriter,
 // it implements xml data output to file for any class Data object supplied

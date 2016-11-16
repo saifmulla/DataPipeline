@@ -48,7 +48,7 @@ DataPipeline::Data DataPipeline::CsvDataReader::read()
 		// search for final occurence from end
 		int last_occ = line.rfind('"');
 		// obtain address string 
-		std::string address = line.substr(first_occ,(last_occ-first_occ-1));
+		std::string address = line.substr(first_occ+1,(last_occ-first_occ-1));
 		// next obtain the remaining comma seperated string
 		std::stringstream commastr;
 		commastr << line.substr(0,first_occ-1);
