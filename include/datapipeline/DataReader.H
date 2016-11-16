@@ -25,7 +25,7 @@ public:
 	// must implement this function. Mainly this function can be used to have 
 	// different implementation of file reading based on type of file 
 	// being read
-	virtual DataPipeline::Data read() = 0;
+	virtual bool read(DataPipeline::Data& data) = 0;
 
 	// Get All column names
 	// if the input file contains column names then read them in the 

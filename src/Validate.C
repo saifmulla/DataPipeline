@@ -1,5 +1,5 @@
 #include "datapipeline/Validate.H"
-
+#include <iostream>
 DataPipeline::Validate::Validate(DataPipeline::Data* data)
 :data_(data)
 {

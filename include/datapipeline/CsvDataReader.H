@@ -30,7 +30,7 @@ public:
 	// read
 	// implementation of pure virtual function read from base class
 	// in to subclass
-	virtual DataPipeline::Data read() override;
+	virtual bool read(DataPipeline::Data& data) override;
 
 	// return column names
 	virtual std::vector<std::string>& getColumnNames() override;

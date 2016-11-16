@@ -30,7 +30,7 @@ For unit testing [Google Testing Framework](https://github.com/google/googletest
 mkdir build && cd build
 cmake ../ -DCMAKE_INSTALL_PREFIX=<installation_path_for_binaries> -DBUILD_UNIT_TESTS=ON
 if any preference for compiler add extra parameter -DCMAKE_CXX_COMPILER=<compiler-name>
-make test
+make test or ctest
 make && make install
 ```
 
@@ -41,6 +41,13 @@ the code is written in executable `run` which can be used to generate outputs. T
 run <file-to-read> <output-format(xml|json)> <output-file-name>
 ```  
 
-## Status
+## Status  
+### Not working  
+ * Validate Class  
+ This class has been experiencing problems with regular expression validation for url and check UTF8 function, basically the member function check is supposed to traverse through all datarows in class Data and validate ratings, url and check the strings but the main problem is occuring because I unable to figure out reading and writing or validating UTF-8 strings.  
+ * UTF-8 processed file
+ Although the data is read processed and stored in output files but it is not UTF-8 charset compatible. I have been working on to resolve this issue mostly while reading data from file by informing C++ string to understand the data in UTF-8 charset format once this starts working then writing data would not be an issue.
 
+### Working
+The code reads a csv file process data to output `json` and `XML` files.
 

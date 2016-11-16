@@ -7,14 +7,16 @@ using namespace DataPipeline;
 
 TEST(TestJsonDataWriter, construction){
 	CsvDataReader reader("../data/test_1.csv");
-	Data data = reader.read();
+	Data data;
+	reader.read(data);
 	JsonDataWriter writer;
 	writer.write(data,"test_2.json");
 }
 
 TEST(TestJsonDataWriter, largefile){
 	CsvDataReader reader("../data/hotels.csv");
-	Data data = reader.read();
+	Data data;
+	reader.read(data);
 	JsonDataWriter writer;
 	writer.write(data,"hotels.json");
 }

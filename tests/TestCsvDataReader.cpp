@@ -8,7 +8,8 @@ using namespace DataPipeline;
 
 TEST(TestCsvDataReader, construction){
 	CsvDataReader reader("../data/test_1.csv");
-	Data data = reader.read();
+	Data data;
+	reader.read(data);
 	ASSERT_EQ(6,data.size());
 	std::vector<std::string>& columns = reader.getColumnNames();
 	ASSERT_EQ(6,columns.size());

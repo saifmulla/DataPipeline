@@ -7,14 +7,16 @@ using namespace DataPipeline;
 
 TEST(TestXmlDataWriter, construction){
 	CsvDataReader reader("../data/test_1.csv");
-	Data data = reader.read();
+	Data data;
+	reader.read(data);
 	XmlDataWriter writer;
 	writer.write(data,"test_2.xml");
 }
 
 TEST(TestXmlDataWriter, largefile){
 	CsvDataReader reader("../data/hotels.csv");
-	Data data = reader.read();
+	Data data;
+	reader.read(data);
 	XmlDataWriter writer;
 	writer.write(data,"hotels.xml");
 }

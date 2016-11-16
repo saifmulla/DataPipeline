@@ -1,3 +1,9 @@
+///////////////////////////////////////////////////////////////////////////////
+// This is the main executable file to intereact with DataPipeline library
+// on compilation this will generate an executable call 'run' whic will 
+// accept command line arguments
+
+
 #include "DataPipeline.H"
 #include <iostream>
 #include <cstdlib>
@@ -42,7 +48,8 @@ int main(int argc, char* argv[])
 	// create object of DataReader to CsvDataReader
 	DataReader* reader = new CsvDataReader(fileName);
 	// 3. read data with datareader
-	Data data = reader->read();
+	Data data;
+	reader->read(data);
 	// TODO: 4. validate data and remove invalid data
 	// TODO: 5. choose data sorting 
 	// 6. write formated data to requested data format

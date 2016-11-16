@@ -15,23 +15,23 @@ TEST(TestGeneral, breakstring){
 	std::cout << "Others " << others.str() << std::endl;
 }
 
-TEST(TestGeneral, regex){
-	if (std::regex_match ("subject", std::regex("(sub)(.*)") ))
-		SUCCEED();
-	else
-		FAIL();
+// TEST(TestGeneral, regex){
+// 	if (std::regex_match ("subject", std::regex("(sub)(.*)") ))
+// 		SUCCEED();
+// 	else
+// 		FAIL();
 
-	if (std::regex_match ("aubject", std::regex("(sub)(.*)") ))
-		SUCCEED();
-	else
-		FAIL();
+// 	if (std::regex_match ("aubject", std::regex("(sub)(.*)") ))
+// 		SUCCEED();
+// 	else
+// 		FAIL();
 
-	std::regex validurl("#((?:https?|http)://(?:\\S*?\\.\\S*?)(?:[\\s)\\[\\]{},;\"\':<]|\\.\\s|$))#");
-	ASSERT_FALSE(std::regex_match("http://saifmullacom",validurl));
-	ASSERT_TRUE(std::regex_match("http://saifmulla.com/index/index.php",validurl));
-	ASSERT_TRUE(std::regex_match("http://saifmulla.com",validurl));
+// 	std::regex validurl("#((?:https?|http)://(?:\\S*?\\.\\S*?)(?:[\\s)\\[\\]{},;\"\':<]|\\.\\s|$))#");
+// 	ASSERT_FALSE(std::regex_match("http://saifmullacom",validurl));
+// 	ASSERT_TRUE(std::regex_match("http://saifmulla.com/index/index.php",validurl));
+// 	ASSERT_TRUE(std::regex_match("http://saifmulla.com",validurl));
 
-}
+// }
 
 int main(int argc, char *argv[]){
     ::testing::InitGoogleTest(&argc,argv);
