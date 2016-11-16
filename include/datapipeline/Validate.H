@@ -2,23 +2,28 @@
 #define DATAPIPELINE_VALIDATE_H
 
 #include "datapipeline/Exports.H"
+#include "datapipeline/Data.H"
+#include "datapipeline/DataRow.H"
+#include <memory>
+#include <cmath>
 
 namespace DataPipeline {
 
-class DataRow; //forward declaration of class DataRow
-
 class EXPORTS Validate {
+private:
+	// TODO: make shared_ptr<>
+	DataPipeline::Data* data_;
 
 public:
-	Validate();
+	explicit Validate(DataPipeline::Data* data);
 
-	void checkUTF8Name(std::string& name);
+	void checkUTF8(std::string& name);
 
-	void checkUrl(std::string& url);
+	std::string& checkUrl(std::string& url);
 
-	void checkRatings(int& rating);
+	int checkRatings(const int& rating);
 
-	void check()
+	void check();
 };
 
 } //end namespace
